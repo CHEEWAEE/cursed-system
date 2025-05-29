@@ -35,3 +35,33 @@ It features permission-aware XOR encryption, ECB-style shift encryption, and rec
 ### 1. Compile
 ```bash
 gcc -o cursed cursed.c
+
+# 🔍 Print the current working directory
+./cursed                # triggers print_current_directory()
+
+# 📁 Change to a new directory (e.g. Documents)
+./cursed cd Documents
+
+# 📂 List all files in the current directory with permissions
+./cursed ls
+
+# 🔐 XOR encrypt a file
+./cursed xor file.txt file_encrypted.txt
+
+# 🔓 XOR decrypt back to original
+./cursed xor file_encrypted.txt file_decrypted.txt
+
+# 🔐 ECB-mode encrypt with 8-byte password
+./cursed ecb-encrypt file.txt "password"
+
+# 🔓 ECB-mode decrypt
+./cursed ecb-decrypt file.txt.ecb "password"
+
+# 🔎 Search by filename (recursively)
+./cursed search-name log
+
+# 🔍 Search by binary content (e.g. hex pattern "deadbeef")
+./cursed search-content deadbeef
+
+# 🧪 Check if a file is encryptable (permissions + type)
+./cursed check file.txt
