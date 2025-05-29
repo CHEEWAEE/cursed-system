@@ -32,7 +32,6 @@ It features permission-aware XOR encryption, ECB-style shift encryption, and rec
 
 ## 🚀 How to Build & Run
 
-### 1. Compile
 ```bash
 gcc -o cursed cursed.c
 
